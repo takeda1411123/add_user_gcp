@@ -6,11 +6,6 @@ except ImportError:
     sys.path.append('/home/takeda1411123/.pyenv/versions/add_user_gcp/lib/python3.7/site-packages/')
     import gspread
 try:
-    from pyasn1.type import opentype
-except ImportError:
-    sys.path.append('/home/takeda1411123/.pyenv/versions/add_user_gcp/lib/python3.7/site-packages/pyasn1/type/')
-    from pyans1.type import opentype
-try:
     from oauth2client.service_account import ServiceAccountCredentials
 except ImportError:
     sys.path.append('/home/takeda1411123/.pyenv/versions/add_user_gcp/lib/python3.7/site-packages/')
@@ -51,7 +46,7 @@ def fix_spreadsheet(wks,sheet, added_list):
 if __name__ == "__main__":
     scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('/home/takeda1411123/add_user_gcp/all-project-264506-6a264ae343d6.json', scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('/home/takeda1411123/all-project-264506-6a264ae343d6.json', scope)
     gc = gspread.authorize(credentials)
     wks = gc.open_by_key('1iTM88V9_Wm6vEQjGK4ivJHkLpyJ9NHqfJ3gZMM2iNiI').sheet1
 
